@@ -1,0 +1,51 @@
+#:kivy 2.0.0
+#:import FrameBase figures.framebase
+#:import HangManFig1 figures.hangmanfig1
+#:import CustomButton widgets.custombutton
+#:import BackGround4 backgrounds.background4
+
+<ShareScreen>:
+	name: '_share_screen_'
+	BackGround4:
+
+	BoxLayout:
+		RelativeLayout:
+			size_hint_x: 0.7
+
+			CustomButton:
+				text: 'Back'
+				icon: "skip-previous"
+				pos_hint: {'x': 0, 'y': 0}
+
+				on_release:
+					root.manager.transition.direction = 'right'
+					root.manager.current = '_main_screen_'
+
+		RelativeLayout:
+			size_hint_x: 0.3
+
+
+			CustomButton:
+				text: 'Whatsapp'
+				icon: "whatsapp"
+				pos_hint: {'x': 0.1, 'y': 0.650}
+				on_release:
+					import webbrowser
+					webbrowser.open('https://web.whatsapp.com')
+
+			CustomButton:
+				text: 'Instagram'
+				icon: "instagram"
+				pos_hint: {'x': 0.1, 'y': 0.50}
+				on_release:
+					import webbrowser
+					webbrowser.open('https://www.instagram.com/')
+
+			CustomButton:
+				text: 'Contribute'
+				icon: 'plus'
+				pos_hint: {'x':0.1,'y':0.35}
+				on_release:
+					import webbrowser
+					webbrowser.open('https://github.com/JOSBEAK/HangMan-Project')
+
